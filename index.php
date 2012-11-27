@@ -1,6 +1,7 @@
 <?php
 
 require_once 'config.php';  
+require_once 'FuelAPI-Platform.php';  
 ?>
 
 <html lang="en">
@@ -27,15 +28,14 @@ require_once 'config.php';
 					session_start();							
 									
 					//Check to make sure the user is logged in based on if the session variables for tokens are set		
-					if (isset($_SESSION['encodedJWT'])){	
-						$encodedJWT = $_SESSION['encodedJWT'];
-						$decodedJWT = $_SESSION['decodedJWT'];
-						echo '<p><strong>Encoded JWT:</strong><div style="word-wrap: break-word; margin-bottom: 30px;"> ' . $encodedJWT . '</div>';				
-						echo '<p><strong>Decoded JWT:</strong><div style="width: 80%;"><code><pre> ' . indent(json_encode($decodedJWT)) . '</pre></code></div></p>';				
-						
+					if (isset($_SESSION['oauthToken'])){	
+						$soapURL = getSoapURLFromPlatform();
+						echo '<p><strong>SOAP Url: </strong><div style="word-wrap: break-word; margin-bottom: 30px;"> ' . $soapURL . '</div>';						
 					} else {
-						echo 'JWT Not Provided.';
-					}										
+						echo 'User not logged in';
+					}		
+
+			
 				?>	
 			</div>
 		</div>			
