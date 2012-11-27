@@ -1,0 +1,6 @@
+<?php
+// Input the Application Secret, Client ID, and Client Secret values from App Center on the following lines
+$appsecret = '';
+$clientId = '';
+$clientSecret = '';
+?>
