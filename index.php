@@ -15,70 +15,75 @@ require_once 'FuelAPI-Platform.php';
 		
 		<link href="/vendor/fuelux/css/fuelux.css" rel="stylesheet" />
 		<link href="/vendor/fuelux/css/fuelux-responsive.css" rel="stylesheet">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js" type="text/javascript"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js" type="text/javascript"></script>
-		<script src="http://raw.github.com/ExactTarget/fuelux/2.0.0/sample/datasource.js" type="text/javascript"></script>
+		<script src="/vendor/fuelux/sample/datasource.js" type="text/javascript"></script>
 		<script src="/vendor/fuelux/loader.js" type="text/javascript"></script>
 
 		
 		<script  type="text/javascript">
-			
-			$(function () {
-				//if search
-				$('#subscriberSearch').on('searched', function (e, text) {					
-					var $url = "/soap-SubSearch.php?searchString=" + text;
-					console.log($url)								
+						
+			$(document).ready(function() {
+				
+				var dataSource = new SubscriberSearchDataSource({
+					columns: [{
+						property: 'EmailAddress',
+						label: 'Email Address',
+						sortable: true
+						}, {
+						property: 'SubscriberKey',
+						label: 'Subscriber Key',
+						sortable: true
+					},
+					{
+						property: 'ViewDetails',
+						label: '',
+						sortable: true
+					}, 
+					{
+						property: 'Status',
+						label: 'Status',
+						sortable: true
+					}
+					],
+					delay: 250
+				});
+				
+				
+				$('#subscriberGrid').datagrid({
+					dataSource: dataSource,
+					renderData: true
+				});
+											
+				
+				$('.viewDetails').live('click', function(){
+					var $url = "/soap-SubDetails.php?id=" + this.id;
+					$.ajax({url: $url, 				
+						
+						complete:function(result){													
+							var sub = JSON.parse(result.responseText).subscribers[0];
+							$('#subscriberDetails').html('<dl> <dt>Email</dt> <dd>'+sub.EmailAddress+'</dd> <dt>Subscriber Key</dt> <dd>'+sub.SubscriberKey+'</dd> <dt>Created</dt> <dd>'+sub.CreatedDate+'</dd> <dt>Status</dt></dl><div id="statusCombo" class="input-append dropdown combobox" style="width: 80%; margin-top: 0;"> <input class="span2" style="width: 50%;" id="statusValue" type="text" value="'+sub.Status+'"><button class="btn" data-toggle="dropdown"><i class="caret"></i></button> <ul class="dropdown-menu"> <li><a href="#">Active</a></li> <li><a href="#">Unsubscribed</a></li> </ul><button class="btn btn-primary pull-right saveStatus" id="'+sub.ID+'">Update Status</button></div>');					
+						}		
+					});						
+
+					return false;
+				});
+				
+				$('.saveStatus').live('click', function(){
+					var $url = "/soap-SubUpdate.php?id=" + this.id + "&status=" + $('#statusValue').combobox().val() ;
 					$.ajax({url: $url, 				
 						
 						complete:function(result){
-							
-							var subs = JSON.parse(result.responseText).subscribers;
-							
-							$.each( subs, function( index, item ) {
-
-								item.ViewDetails = '<button type="button" class="btn btn-primary viewDetails" id="' + item.ID + '">View Details</button>';
-								console.log('item');
-								console.log(item);
-							});
-
-							var dataSource = new StaticDataSource({
-								columns: [{
-									property: 'EmailAddress',
-									label: 'Email Address',
-									sortable: true
-									}, {
-									property: 'SubscriberKey',
-									label: 'Subscriber Key',
-									sortable: true
-									},
-									{
-									property: 'ViewDetails',
-									label: '',
-									sortable: true
-									}, 
-									{
-									property: 'Status',
-									label: 'Status',
-									sortable: true
-								}
-								],					
-								data: subs,
-								delay: 250
-							});
-
-							
-							$('#subscriberGrid').datagrid({
-								dataSource: dataSource
-							});	
-							$( '#subscriberGrid' ).datagrid( 'renderData' );
+							// Once the update is complete, refresh the grid
+							var $gridsearch = jQuery('#subscriberGrid').find('.search');
+							var search = $gridsearch.find('input').val();
+							$gridsearch.trigger('searched', "_RELOAD");
 						}		
-					});		
+					});						
+				 
+					return false;
 				});
-			});
-			
-			
-			$(document).ready(function() {				
-
+				
 			});	
 		</script>
         
@@ -157,7 +162,6 @@ require_once 'FuelAPI-Platform.php';
 		</div>
 	</div>
 
-	<script src="/js/base.js"></script>
 	
     
 	
