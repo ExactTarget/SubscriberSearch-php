@@ -4,20 +4,23 @@ require_once("exacttarget_soap_client.php");
 require_once("config.php");
 require_once("FuelAPI-Platform.php");
 
-//Check to see if we have started the session already.
+// Initalize the session
 if(!isset($_SESSION)) {session_start();}
 
+// The Internal OAuth Token is needed for Email SOAP API, this is different from the OAuth Token used for REST
 $token = $_SESSION['internalOauthToken'];
 
+// This is the search string that was entered in the UI
 $searchString = $_GET['searchString'];	
 
+// Call the Fuel API Rest service for Endpoints to make sure we hit the correct SOAP endpoint
 $soapURL = getSoapURLFromPlatform();
 
 
 try{
 
 	$client = new ExactTargetSoapClient('etframework.wsdl', array('trace'=>1));
-	
+	// Use the endpoint from the REST call we made above
 	$client->__setLocation($soapURL);
 	
 
@@ -33,7 +36,7 @@ try{
 	$props = array( "ID", "EmailAddress", "SubscriberKey", "Status");
 	$rr->Properties = $props;
 
-	//Setup account filtering, to look for a given account MID
+	// Setup filter to look for any subscribers where their email address contains the search string
 	$filterPart = new ExactTarget_SimpleFilterPart();
 	$filterPart->Property = 'EmailAddress';
 	$filterPart->SimpleOperator = ExactTarget_SimpleOperators::like;
@@ -45,16 +48,22 @@ try{
 	//Setup and execute request
 	$rrm = new ExactTarget_RetrieveRequestMsg();
 	$rrm->RetrieveRequest = $rr;
-
+	// The line below makes the HTTP request to ExactTarget with the SOAP payload
 	$results = $client->Retrieve($rrm);
 	
+	
+	// We want the response to be an array even if it has 1 result in it
 	$output = array();
+
+	// Check to see if there are any results
 	if (property_exists($results, "Results")){
+		// If the results are already an array then we can add each item to the new array
 		if (is_array($results->Results)){		
 			foreach($results->Results as $sub) 
 			{		
 				$output = $results->Results;
-			} 		
+			} 
+		// If there is only one object returned then the result is not an array so we will put this single object into our new array		
 		} else {
 				$output = array();
 				$output[] = $results->Results;		
@@ -67,8 +76,8 @@ try{
 } 
 catch (SoapFault $e) 
 {
+	// Print error message to the screen
 	print_r($e);
-	print_r(array());
 }	
 
 

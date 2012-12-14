@@ -24,7 +24,7 @@ require_once 'FuelAPI-Platform.php';
 		<script  type="text/javascript">
 						
 			$(document).ready(function() {
-				
+				// Testing Docco with Javascript Comment
 				var dataSource = new SubscriberSearchDataSource({
 					columns: [{
 						property: 'EmailAddress',

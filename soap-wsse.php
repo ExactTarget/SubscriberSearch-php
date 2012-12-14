@@ -118,7 +118,7 @@ class WSSESoap {
 		}
 	}
 	
-	
+	// This section was added in order to be able to handle passing the Internal oAuth Token for ExactTarget Email SOAP API
 	public function addOAuth($token) {		
 		$headers = $this->SOAPXPath->query('//wssoap:Envelope/wssoap:Header');
 		$header = $headers->item(0);

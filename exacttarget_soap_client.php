@@ -1,6 +1,8 @@
 <?php 
 require('soap-wsse.php');
 
+// This class file is generated based on the ExactTarget Email SOAP API WSDL (https://webservice.exacttarget.com/etframework.wsdl).
+
 class ExactTargetSoapClient extends SoapClient {
 	public $username = NULL;
 	public $password = NULL;
@@ -18,9 +20,6 @@ class ExactTargetSoapClient extends SoapClient {
 			$token = $this->authtoken;
 			$objWSSE->addOAuth($token);
 		}
-		//print_r('<pre>');
-		//print_r($objWSSE->saveXML());
-		//print_r('</pre>');
 
 		return parent::__doRequest($objWSSE->saveXML(), $location, $saction, $version);
    }
