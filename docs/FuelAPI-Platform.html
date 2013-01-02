@@ -102,8 +102,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
                               soap-SubSearch.php              </a>
                                           <a class="source" href="./JWT.html">
                               JWT.php              </a>
+<<<<<<< HEAD
                                           <a class="source" href="./config.html">
                               config.php              </a>
+=======
+>>>>>>> Added new comments and Documentation
                                           <a class="source" href="./soap-SubUpdate.html">
                               soap-SubUpdate.php              </a>
                                           <a class="source" href="./FuelAPI-Platform.html">
@@ -144,7 +147,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-0">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Initalize the session</p>
+=======
+              <p>Initalize the session.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">))</span> <span class="p">{</span>
@@ -156,7 +163,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Get the oAuthToken that we have stored for the session so we can pass to the service</p>
+=======
+              <p>Get the oAuthToken stored for the session so we can pass that token to the service.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nv">$oauthToken</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauthToken&#39;</span><span class="p">];</span></pre></div>            </td>
@@ -166,7 +177,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Append the OAuth token onto the URL as the access_token parameter</p>
+=======
+              <p>Append the OAuth token to the URL as the access_token parameter.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nv">$requestURL</span> <span class="o">=</span> <span class="s1">&#39;https://www.exacttargetapis.com/platform/v1/endpoints/soap?access_token=&#39;</span><span class="o">.</span><span class="nv">$oauthToken</span><span class="p">;</span></pre></div>            </td>
@@ -176,7 +191,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Call restGet() from FuelAPIHelper.php</p>
+=======
+              <p>Call restGet() from FuelAPIHelper.php.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nv">$endpointsResponse</span> <span class="o">=</span> <span class="nx">restGet</span><span class="p">(</span><span class="nv">$requestURL</span><span class="p">);</span></pre></div>            </td>
@@ -186,7 +205,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Decode the JSON string into a PHP object</p>
+=======
+              <p>Decode the JSON string into a PHP object.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nv">$endpointJSON</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$endpointsResponse</span><span class="p">);</span></pre></div>            </td>
@@ -196,7 +219,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Return only the URL from the response from the Endpoints API</p>
+=======
+              <p>Return only the URL from the response from the Endpoints API.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre></pre></div>            </td>
@@ -206,7 +233,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>This is the URL that corresponds with the appropriate stack for your account  </p>
+=======
+              <p>Use the URL that corresponds with the appropriate stack for your account.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="k">return</span> <span class="nv">$endpointJSON</span><span class="o">-&gt;</span><span class="na">url</span><span class="p">;</span> 

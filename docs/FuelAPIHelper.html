@@ -102,8 +102,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
                               soap-SubSearch.php              </a>
                                           <a class="source" href="./JWT.html">
                               JWT.php              </a>
+<<<<<<< HEAD
                                           <a class="source" href="./config.html">
                               config.php              </a>
+=======
+>>>>>>> Added new comments and Documentation
                                           <a class="source" href="./soap-SubUpdate.html">
                               soap-SubUpdate.php              </a>
                                           <a class="source" href="./FuelAPI-Platform.html">
@@ -144,7 +147,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-0">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Function for calling a Fuel API using GET</p>
+=======
+              <p>This function calls a Fuel API using GET.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre></pre></div>            </td>
@@ -154,9 +161,15 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p><em class='docparam'>@param</em> string      $url    The resource URL for the REST API</p>
 
 <p><em class='docparam'>@return</em> string     The response payload from the REST service</p>
+=======
+              <p><em class='docparam'>@param</em> string      $url    provides the resource URL for the REST API.</p>
+
+<p><em class='docparam'>@return</em> string     provides the response payload from the REST service.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre><span class="k">function</span> <span class="nf">restGet</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span> <span class="p">{</span>
@@ -167,7 +180,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Uses the URL passed in that is specific to the API used</p>
+=======
+              <p>This code uses the URL passed in (specific to the API used).</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
@@ -178,7 +195,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Need to set ReturnTransfer to True in order to store the result in a variable</p>
+=======
+              <p>This code sets ReturnTransfer to True in order to store the result in a variable.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span></pre></div>            </td>
@@ -188,10 +209,17 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Disable VerifyPeer for SSL</p>
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+=======
+              <p>Force the certificate to be validated for SSL.</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+>>>>>>> Added new comments and Documentation
 
  <span class="nv">$outputJSON</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span></pre></div>            </td>
           </tr>
@@ -200,7 +228,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>If there are no errors then we just pass the response returned back  </p>
+=======
+              <p>If there are no errors, this code passes the response returned.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
@@ -213,7 +245,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>If there are errors then return a false</p>
+=======
+              <p>If there are errors, this code returns a value of false.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
@@ -226,7 +262,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Function for calling a Fuel API using POST</p>
+=======
+              <p>This function calls a Fuel API using POST.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre></pre></div>            </td>
@@ -236,10 +276,17 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p><em class='docparam'>@param</em> string      $url    The resource URL for the REST API
 <em class='docparam'>@param</em> string      $content    A string of JSON which will be passed to the REST API</p>
 
 <p><em class='docparam'>@return</em> string     The response payload from the REST service</p>
+=======
+              <p><em class='docparam'>@param</em> string      $url    provides the resource URL for the REST API.</p>
+              <p> <em class='docparam'>@param</em> string      $content    provides a JSON string which will be passed to the REST API.</p>
+
+<p><em class='docparam'>@return</em> string     contains the response payload from the REST service.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre><span class="k">function</span> <span class="nf">restPost</span><span class="p">(</span><span class="nv">$url</span><span class="p">,</span> <span class="nv">$content</span><span class="p">)</span> <span class="p">{</span>
@@ -250,7 +297,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Uses the URL passed in that is specific to the API used</p>
+=======
+              <p>This code uses the URL passed in (specific to the API used).</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span></pre></div>            </td>
@@ -260,7 +311,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>When posting to a Fuel API, content-type has to be explicitly set to application/json</p>
+=======
+              <p>When posting to a Fuel API, explicitly set this content-type  to application/json.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="p">);</span>
@@ -271,7 +326,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>The content is the JSON payload that defines the request</p>
+=======
+              <p>This code contains the JSON payload that defines the request.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span> <span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$content</span><span class="p">);</span></pre></div>            </td>
@@ -281,7 +340,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Need to set ReturnTransfer to True in order to store the result in a variable</p>
+=======
+              <p>Set ReturnTransfer to True in order to store the result in a variable.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span></pre></div>            </td>
@@ -291,10 +354,17 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Disable VerifyPeer for SSL</p>
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+=======
+              <p>Force the certificate to be validated for SSL.</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+>>>>>>> Added new comments and Documentation
 
  <span class="nv">$outputJSON</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span></pre></div>            </td>
           </tr>
@@ -303,7 +373,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>If there are no errors then we just pass the response returned back  </p>
+=======
+              <p>If there are no errors, this code passes the response returned.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">))</span> <span class="p">{</span>
@@ -316,8 +390,12 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>If there are errors then return a false</p>
             </td>
+=======
+              <p>If there are errors, this code returns a value of false.</p></td>
+>>>>>>> Added new comments and Documentation
             <td class="code">
               <div class="highlight"><pre>  <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
   <span class="k">return</span> <span class="k">false</span><span class="p">;</span>

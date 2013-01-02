@@ -102,8 +102,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
                               soap-SubSearch.php              </a>
                                           <a class="source" href="./JWT.html">
                               JWT.php              </a>
+<<<<<<< HEAD
                                           <a class="source" href="./config.html">
                               config.php              </a>
+=======
+>>>>>>> Added new comments and Documentation
                                           <a class="source" href="./soap-SubUpdate.html">
                               soap-SubUpdate.php              </a>
                                           <a class="source" href="./FuelAPI-Platform.html">
@@ -161,7 +164,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Decode the JWT into a PHP object using the app secret from the config file</p>
+=======
+              <p>Decode the JWT into a PHP object using the app secret from the config file.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nv">$decodedJWT</span> <span class="o">=</span> <span class="nx">JWT</span><span class="o">::</span><span class="na">decode</span><span class="p">(</span><span class="nv">$encodedJWT</span><span class="p">,</span> <span class="nv">$encodedJWT</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span></pre></div>            </td>
@@ -171,7 +178,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>OAuth Token can be used to access Fuel API Family REST services </p>
+=======
+              <p>Use the OAuth Token to access Fuel API Family REST services. </p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauthToken&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$decodedJWT</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">oauthToken</span><span class="p">;</span></pre></div>            </td>
@@ -181,7 +192,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Internal OAuthToken can be used to access the ExactTarget Email SOAP API service</p>
+=======
+              <p>Use the internal OAuthToken  to access the ExactTarget Email SOAP API service.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;internalOauthToken&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$decodedJWT</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">internalOauthToken</span><span class="p">;</span></pre></div>            </td>
@@ -191,7 +206,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Keep the Expiration Date for the token in a session</p>
+=======
+              <p>Keep the Expiration Date for the token in a session.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;exp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$decodedJWT</span><span class="o">-&gt;</span><span class="na">exp</span><span class="p">;</span></pre></div>            </td>
@@ -201,7 +220,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Keep the Refresh Token in a session</p>
+=======
+              <p>Keep the Refresh Token in a session.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;refreshToken&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$decodedJWT</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">refreshToken</span><span class="p">;</span></pre></div>            </td>
@@ -211,7 +234,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Redirect the user to the url defined in the JWT</p>
+=======
+              <p>Redirect the user to the url defined in the JWT.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nx">header</span><span class="p">(</span> <span class="s1">&#39;Location: &#39;</span><span class="o">.</span><span class="nv">$decodedJWT</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">application</span><span class="o">-&gt;</span><span class="na">redirectUrl</span><span class="p">)</span> <span class="p">;</span>
@@ -222,7 +249,11 @@ td.docs .docparam {color:#DB251A;font-weight:bold;}
               <div class="pilwrap">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
+<<<<<<< HEAD
               <p>Print out an error in case no JWT value was passed</p>
+=======
+              <p>Print out an error in case no JWT value was passed.</p>
+>>>>>>> Added new comments and Documentation
             </td>
             <td class="code">
               <div class="highlight"><pre>  <span class="nb">print_r</span><span class="p">(</span><span class="s1">&#39;JWT Value not provided.&#39;</span><span class="p">);</span>
