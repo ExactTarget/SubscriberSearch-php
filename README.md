@@ -7,7 +7,7 @@ The full application allows the user to search their ExactTarget subscriber list
 
 #Tags
 ----------
-This application was built in steps and they are [tagged](https://github.com/ExactTarget/SubscriberSearch-php/tags)  so that you can get the final application or just specific code.
+This application was built in steps and they are [tagged](https://github.com/ExactTarget/SubscriberSearch-net/tags)  so that you can get the final application or just specific code.
 
 Step1 - Created the basic app and implemented the JWT for display in Interactive Marketing Hub
 
