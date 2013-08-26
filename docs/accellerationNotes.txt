@@ -1,3 +1,0 @@
-There are still some templates which need converted to PHP's Savant engine. Make sure to check those and import as needed.
-
-Make sure to convert all the Express.js views into /controllers for PHP
