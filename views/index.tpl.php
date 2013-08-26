@@ -1,5 +1,5 @@
 <?php
-	require_once( '/inc/header.php' );
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/inc/header.php';
 ?>
 		<div class="container">    
 			<div class="row">
@@ -7,8 +7,8 @@
 					<ul class="breadcrumb">
 					  <li class="active"><b>Home</b></li>			  
 					</ul>			
-					<?php if( $token ): ?>
-					<?php elseif( !$token ): ?>
+					<?php if( $this->token ): ?>
+					<?php elseif( !$this->token ): ?>
 						<div class="alert alert-error"><b>Error</b> Unable to obtain an access token</div>
 					<?php endif; ?>
 				</div>
@@ -112,4 +112,4 @@
 
 		<script src="/js/datasource.js"></script>
 		<script src="/js/index.js"></script>
-<?php include_once( '/inc/footer.php' ); ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php'; ?>

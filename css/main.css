@@ -1,0 +1,118 @@
+body {
+	font-family: arial;
+	font-size: 14px;
+}
+b {
+	color: 333;
+}
+
+.header {
+	text-align: center;
+}
+h1 {
+	font-family: arial;
+	font-size: 36px;
+	color: #333;
+}
+.info {
+	font-size: 16px;
+	color: #666;
+}
+
+.content {
+	width: 600px;
+	margin: auto auto;
+}
+.not-saved {
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #EE6767;
+}
+.saved {
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #8BD06D;
+}
+.word {
+	font-size: 24px;
+}
+.btn {
+	font-size: 24px;
+}
+.word-list {
+	border: solid 1px #bbb;
+	padding: 10px;
+	height: 400px;
+	overflow:auto;
+}
+
+.hide {
+    display: none;
+}
+
+/* Jumbotrons
+-------------------------------------------------- */
+.jumbotron {
+  position: relative;
+}
+.jumbotron h1 {
+  margin-bottom: 9px;
+  font-size: 81px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.jumbotron p {
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+.jumbotron .btn-large {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 14px 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Masthead (docs home) */
+.masthead {
+  padding-top: 36px;
+  margin-bottom: 72px;
+}
+.masthead h1,
+.masthead p {
+  text-align: center;
+}
+.masthead h1 {
+  margin-bottom: 18px;
+}
+.masthead p {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+/* Textual links in masthead */
+.masthead-links {
+  margin: 0;
+  list-style: none;
+}
+.masthead-links li {
+  display: inline;
+  padding: 0 10px;
+  color: rgba(255,255,255,.25);
+}
+
+/* Specific jumbotrons
+------------------------- */
+/* supporting docs pages */
+.subhead {
+  padding-bottom: 0;
+  margin-bottom: 9px;
+}
+.subhead h1 {
+  font-size: 54px;
+}
+
