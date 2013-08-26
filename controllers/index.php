@@ -17,12 +17,11 @@ if(!isset($_SESSION)) {session_start();}
 //$_SESSION['refreshToken'] = $decodedJWT->request->user->refreshToken;			
 
 
-$myClient = new ET_Client(true);
 // TODO: REMOVE LATER, BOOTSTRAPPING AUTH FOR RUNNING LOCALLY
 if( !isset($_SESSION['oauthToken']) ) {
     // Create the request to the Auth API using our config credentials
     $route = "https://auth.exacttargetapis.com/v1/requestToken?legacy=1";
-    $payload = '{"clientId":"' . $config['clientId'] . '","clientSecret":"' . $config['clientSecret'] . '", "accessType":"offline"}';
+    $payload = '{"clientId":"' . $clientId . '","clientSecret":"' . $clientSecret . '", "accessType":"offline"}';
     $tokenData = restPost( $route, $payload );
     // Assign values to the session
     if( $tokenData ) {

@@ -1,6 +1,7 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/libs.php';
+require_once 'JWT.php';  // install from https://github.com/luciferous/jwt
+require_once 'config.php';  
 
 session_start(); 
 
