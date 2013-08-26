@@ -5,7 +5,6 @@ require_once 'config.php';
 
 session_start(); 
 
-
 try {
 	if (isset($_REQUEST['jwt'])){
 		$encodedJWT = $_REQUEST['jwt'];		
